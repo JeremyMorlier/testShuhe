@@ -391,7 +391,7 @@ def prepareBackbone(name="resnet18", feature_maps=32, pretrained=True):
     large = False
     patch_size = 0
     projection = "conv"
-    backbone = args.backbone
+    backbone = name
     """if args.backbone.lower()[-6:] == "_large":
         large = True
         backbone = args.backbone[:-6]"""  # ViT_largeを使う機会があればコメントアウトを取り消してください．MNet_v3_Lのためにコメントアウトしています．
