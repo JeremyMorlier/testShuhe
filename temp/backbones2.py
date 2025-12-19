@@ -403,7 +403,7 @@ def prepareBackbone(name="resnet18", feature_maps=32, pretrained=True):
             backbone = args.backbone
         # patch_size = int(backbone.split('_')[-1])
         # backbone = '_'.join(backbone.split('_')[:-1])
-
+    print(backbone)
     return {
         "resnet9": lambda: (ResNet9(args.feature_maps), 5 * args.feature_maps),
         "resnet18": lambda: (
