@@ -395,14 +395,8 @@ def prepareBackbone(name="resnet18", feature_maps=32, pretrained=True):
     """if args.backbone.lower()[-6:] == "_large":
         large = True
         backbone = args.backbone[:-6]"""  # ViT_largeを使う機会があればコメントアウトを取り消してください．MNet_v3_Lのためにコメントアウトしています．
-    if "vit" in args.backbone:
-        if "_linear" in args.backbone:
-            projection = "linear"
-            backbone = args.backbone[:-7]
-        else:
-            backbone = args.backbone
-        # patch_size = int(backbone.split('_')[-1])
-        # backbone = '_'.join(backbone.split('_')[:-1])
+    # patch_size = int(backbone.split('_')[-1])
+    # backbone = '_'.join(backbone.split('_')[:-1])
     print(backbone)
     return {
         "resnet9": lambda: (ResNet9(args.feature_maps), 5 * args.feature_maps),
