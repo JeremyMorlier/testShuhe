@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from args import args
+from .args import args
 import random  # for manifold mixup
 from functools import partial
 
