@@ -9,5 +9,5 @@
 #SBATCH --gres=gpu:a100:1
 #SBATCH -p BrainA100
 
-source .venv/bin/activate
-srun python3 few_shot_resnet12_vits.py
+source .venvbatch/bin/activate
+srun python3 few_shot_resnet12_vits.py --num-epochs 100 --val_crop_size 84 --train_crop_size 84 --val_resize_size 84 --student_input_size 84 --batch_size 376 

@@ -345,5 +345,5 @@ for epoch in range(args.num_epochs):
 
     torch.save(
         student_model.state_dict(),
-        f"/Brain/private/j20morli/test/{epoch + 1}.pth",
+        f"/Brain/private/j20morli/test/run2_{epoch + 1}.pth",
     )
