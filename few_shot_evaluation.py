@@ -487,7 +487,7 @@ class MetaAlbumsGenerator(EpisodicGenerator):
 
 
 if __name__ == "__main__":
-    from args import args
+    from temp.args import args
 
     print("Test")
     print(args.dataset)
