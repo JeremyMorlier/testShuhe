@@ -27,8 +27,8 @@ parser = ArgumentParser("Main")
 parser.add_argument("--lr", type=float, default=0.001)
 parser.add_argument("--weight-decay", type=float, default=1e-3)
 parser.add_argument("--model", type=str, default="vit-s")
-parser.add_argument("--num-epochs", type=int, default=20)
-parser.add_argument("--batch-size", type=int, default=32)
+parser.add_argument("--num-epochs", type=int, default=100)
+parser.add_argument("--batch-size", type=int, default=376)
 parser.add_argument("--save", action="store_true", help="save the student model")
 parser.add_argument("--seed", type=int, default=1)
 parser.add_argument(
@@ -39,25 +39,25 @@ parser.add_argument(
 )
 parser.add_argument(
     "--val_crop_size",
-    default=224,
+    default=84,
     type=int,
     help="the central crop size used for validation (default: 224)",
 )
 parser.add_argument(
     "--train_crop_size",
-    default=224,
+    default=84,
     type=int,
     help="the random crop size used for training (default: 224)",
 )
 parser.add_argument(
     "--val_resize_size",
-    default=256,
+    default=84,
     type=int,
     help="the resize size used for validation (default: 256)",
 )
 parser.add_argument(
     "--student_input_size",
-    default=224,
+    default=84,
     type=int,
     help="input size for the student model",
 )
@@ -253,7 +253,7 @@ def create_backbone_dinov2(model):
 
 
 torch.manual_seed(seed=args.seed)
-
+print(args)
 # Loading and fixing the teacher model
 teacher_model = create_backbone_dinov2(args.model)
 teacher_model = teacher_model.to(args.device)
